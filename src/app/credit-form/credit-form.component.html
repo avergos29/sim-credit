@@ -1,0 +1,8 @@
+  <form #f="ngForm" (ngSubmit)="compute()">
+    <label> Prix </label> <input class="form-control" type="text" name="total" [(ngModel)]="total"><br>
+    <label> Apport </label> <input class="form-control" type="text" name="apport" [(ngModel)]="apport"><br>
+    <label> Taux </label> <input class="form-control" type="text" name="taux" [(ngModel)]="taux"><br>
+    <label> Duree </label> <input class="form-control" type="text" name="duree" [(ngModel)]="duree"><br>
+    <label> Mensualites </label>  {{result}}<br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
