@@ -1,8 +1,51 @@
-  <form #f="ngForm" (ngSubmit)="compute()">
-    <label> Prix </label> <input class="form-control" type="text" name="total" [(ngModel)]="total"><br>
-    <label> Apport </label> <input class="form-control" type="text" name="apport" [(ngModel)]="apport"><br>
-    <label> Taux </label> <input class="form-control" type="text" name="taux" [(ngModel)]="taux"><br>
-    <label> Duree </label> <input class="form-control" type="text" name="duree" [(ngModel)]="duree"><br>
-    <label> Mensualites </label>  {{result}}<br>
-    <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="container-fluid">
+  <form [formGroup]="formGroup" (ngSubmit)="validate()">
+    <div class="row has-feedback" [ngClass]="hasError('total')">
+      <label class="control-label col-md-2 col-xs-12">Prix</label>
+      <div class="col-md-10 col-xs-12">
+        <input class="form-control" type="text" name="total" formControlName="total">
+      </div>
+    </div>
+    <div class="row">&nbsp;</div>
+
+    <div class="row" [ngClass]="hasError('apport')">
+      <div class="col-md-2 col-xs-12">
+        <label class="control-label">Apport</label>
+      </div>
+      <div class="col-md-10 col-xs-12">
+        <input class="form-control" type="text" name="apport" formControlName="apport">
+      </div>
+    </div>
+    <div class="row">&nbsp;</div>
+
+    <div class="row" [ngClass]="hasError('taux')">
+      <div class="col-md-2 col-xs-12">
+        <label class="control-label">Taux</label>
+      </div>
+      <div class="col-md-10 col-xs-12">
+        <input class="form-control" type="text" name="taux" formControlName="taux">
+      </div>
+    </div>
+    <div class="row">&nbsp;</div>
+
+    <div class="row" [ngClass]="hasError('duree')">
+      <div class="col-md-2 col-xs-12">
+        <label class="control-label">Duree</label>
+      </div>
+        <div class="col-md-10 col-xs-12">
+        <input class="form-control" type="text" name="duree" formControlName="duree">
+      </div>
+    </div>
+    <div class="row">&nbsp;</div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">Submit</button>
   </form>
+</div>
+
+<p><p>
+<div class="container-fluid">
+  <div [hidden]=hidden  class="alert alert-success" role="alert">
+    <label>Mensualites</label>
+    <span class="badge">{{result}}</span>
+  </div>
+</div>
