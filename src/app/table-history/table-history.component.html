@@ -1,0 +1,31 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table matSort #table [dataSource]="dataSource">
+    <ng-container matColumnDef="prix">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Prix </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.prix}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="apport">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Apport </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.apport}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="taux">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Taux </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.taux}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="duree">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Duree </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.duree}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="mensualite">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Mensualite </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.mensualite}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator
+                [pageSize]="5"
+                [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+</div>

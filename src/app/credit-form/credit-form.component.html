@@ -1,51 +1,44 @@
-  <div class="container-fluid">
+<div class="container-fluid">
   <form [formGroup]="formGroup" (ngSubmit)="validate()">
-    <div class="row has-feedback" [ngClass]="hasError('total')">
-      <label class="control-label col-md-2 col-xs-12">Prix</label>
-      <div class="col-md-10 col-xs-12">
-        <input class="form-control" type="text" name="total" formControlName="total">
-      </div>
+    <div [ngClass]="hasError('prix')">
+      <mat-form-field>
+        <input matInput placeholder="Prix" class="form-control" type="text" name="prix" formControlName="prix">
+      </mat-form-field>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div  [ngClass]="hasError('apport')">
+      <mat-form-field>
+        <input matInput placeholder="Apport" class="form-control" type="text" name="apport" formControlName="apport">
+      </mat-form-field>
+    </div>
+    <div class="row">&nbsp;</div>
+   <div  [ngClass]="hasError('taux')">
+     <mat-form-field>
+       <input matInput placeholder="Taux" class="form-control" type="number" name="taux" formControlName="taux">
+     </mat-form-field>
     </div>
     <div class="row">&nbsp;</div>
 
-    <div class="row" [ngClass]="hasError('apport')">
-      <div class="col-md-2 col-xs-12">
-        <label class="control-label">Apport</label>
-      </div>
-      <div class="col-md-10 col-xs-12">
-        <input class="form-control" type="text" name="apport" formControlName="apport">
-      </div>
+    <div  [ngClass]="hasError('duree')">
+      <mat-form-field>
+        <mat-select placeholder="Duree" formControlName="duree" name="duree">
+          <mat-option *ngFor="let value of [5,10,15,20,25]" [value]="value">
+            {{value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
     <div class="row">&nbsp;</div>
-
-    <div class="row" [ngClass]="hasError('taux')">
-      <div class="col-md-2 col-xs-12">
-        <label class="control-label">Taux</label>
-      </div>
-      <div class="col-md-10 col-xs-12">
-        <input class="form-control" type="text" name="taux" formControlName="taux">
-      </div>
+    <div class="row col-md-offset-1">
+      <button mat-raised-button color="primary" type="submit" [disabled]="formGroup.invalid">Submit</button>
     </div>
-    <div class="row">&nbsp;</div>
-
-    <div class="row" [ngClass]="hasError('duree')">
-      <div class="col-md-2 col-xs-12">
-        <label class="control-label">Duree</label>
-      </div>
-        <div class="col-md-10 col-xs-12">
-        <input class="form-control" type="text" name="duree" formControlName="duree">
-      </div>
-    </div>
-    <div class="row">&nbsp;</div>
-
-    <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">Submit</button>
   </form>
 </div>
 
 <p><p>
-<div class="container-fluid">
-  <div [hidden]=hidden  class="alert alert-success" role="alert">
-    <label>Mensualites</label>
-    <span class="badge">{{result}}</span>
+  <div class="container-fluid">
+    <div [hidden]=hidden  class="alert alert-success" role="alert">
+      <label>Mensualites</label>
+      <span class="badge">{{result}}</span>
+    </div>
   </div>
-</div>

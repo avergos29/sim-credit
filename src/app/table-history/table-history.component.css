@@ -1,0 +1,9 @@
+.example-container {
+  margin: auto;
+  max-width: 600px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
