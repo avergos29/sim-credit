@@ -18,11 +18,11 @@ export class AppService {
   constructor(private http: HttpClient){}
 
   public save(data: Data): Observable<any> {
-    return this.http.post(environment.apiUrl, data,{responseType: 'text'});
+    return this.http.post("/api", data,{responseType: 'text'});
   }
 
   public loadData(): Observable<Data[]> {
-    return this.http.get<Data[]>(environment.apiUrl);
+    return this.http.get<Data[]>("/api");
   }
 
 }
