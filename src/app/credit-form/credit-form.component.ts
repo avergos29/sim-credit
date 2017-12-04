@@ -6,7 +6,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AppService } from '../app.service';
 
 @Component({
-  selector: 'result-dialog',
+  selector: 'app-result-dialog',
   template: 'Mensualités : {{data.result}}',
 })
 export class ResultDialogComponent {
@@ -26,10 +26,10 @@ export class ResultDialogComponent {
   styleUrls: ['./credit-form.component.css']
 })
 export class CreditFormComponent implements OnInit {
-  private formGroup : FormGroup;
-  private hidden: boolean = true;
-  private result: number;
-  private data: Data[] = [];
+  public formGroup : FormGroup;
+  public hidden: boolean = true;
+  public result: number;
+  public data: Data[] = [];
 
   constructor(private fb: FormBuilder, private ts: TableService, private service: AppService, private dialog: MatDialog){
     this.formGroup = this.fb.group({
@@ -59,7 +59,7 @@ export class CreditFormComponent implements OnInit {
     return this.formGroup.value[name];
   }
 
-  private hasError(name: string) : string {
+  public hasError(name: string) : string {
      return this.formGroup.controls[name].invalid ? 'has-error' : '';
   }
 

@@ -2,19 +2,19 @@
   <form [formGroup]="formGroup" (ngSubmit)="validate()">
     <div [ngClass]="hasError('prix')">
       <mat-form-field>
-        <input matInput placeholder="Prix" class="form-control" type="text" name="prix" formControlName="prix">
+        <input matInput placeholder="Prix" type="text" name="prix" formControlName="prix">
       </mat-form-field>
     </div>
     <div class="row">&nbsp;</div>
     <div  [ngClass]="hasError('apport')">
       <mat-form-field>
-        <input matInput placeholder="Apport" class="form-control" type="text" name="apport" formControlName="apport">
+        <input matInput placeholder="Apport" type="text" name="apport" formControlName="apport">
       </mat-form-field>
     </div>
     <div class="row">&nbsp;</div>
    <div  [ngClass]="hasError('taux')">
      <mat-form-field>
-       <input matInput placeholder="Taux" class="form-control" type="number" name="taux" formControlName="taux">
+       <input matInput placeholder="Taux" type="number" name="taux" formControlName="taux">
      </mat-form-field>
     </div>
     <div class="row">&nbsp;</div>
