@@ -21,10 +21,11 @@ import {
   MatSortModule,
   MatFormFieldModule,
   MatInputModule,
+  MatIconModule,
+  MatSidenavModule
 } from '@angular/material';
 import { TableService } from './table.service';
 import { AppService } from './app.service';
-import {MatSidenavModule} from '@angular/material/sidenav';
 
 const appRoutes: Routes = [
   { path: 'sim', component: CreditFormComponent },
@@ -62,6 +63,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatDialogModule,
     MatSidenavModule,
+    MatIconModule,
   ],
   providers: [TableService, AppService],
   bootstrap: [AppComponent],

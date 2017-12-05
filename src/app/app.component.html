@@ -1,21 +1,21 @@
-
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3>xx</h3>
+    <mat-icon (click)="toggleMenu()">menu</mat-icon>
+    <h3>Simulation de Crédit</h3>
   </div>
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav opened mode="side">
-      <ul>
-        <li>
-          <a href="sim">Home</a>
-        </li>
-        <li>
-          <a href="history">History</a>
-        </li>
-      </ul>
-    </mat-sidenav>
-    <div class="panel-body">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-container>
+  <mat-sidenav-container class="">
+  <mat-sidenav [(opened)]="displayMenu" mode="over">
+    <ul>
+      <li>
+        <a href="sim">Home</a>
+      </li>
+      <li>
+        <a href="history">History</a>
+      </li>
+    </ul>
+  </mat-sidenav>
+<div class="panel-body">
+  <router-outlet></router-outlet>
+</div>
+</mat-sidenav-container>
 </div>
