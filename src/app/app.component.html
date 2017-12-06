@@ -1,10 +1,28 @@
 
-<div class="panel panel-default">
-  <div class="panel-heading">
+<!-- <div class="panel panel-default"> -->
+  <!-- <div class="panel-heading">
     <h3>xx</h3>
-  </div>
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav opened mode="side">
+  </div> -->
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <button class="hamburger mat-button"
+      mat-button=""
+      (click)="toggleMenu()"
+      title="Docs menu">
+      <span class="mat-button-wrapper">
+        <mat-icon class="mat-icon sidenav-open" role="img" svgicon="menu" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+          </svg>
+        </mat-icon>
+      </span>
+      <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+    </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container" fixedBottomGap>
+    <mat-sidenav [(opened)]="displayMenu" [fixedInViewport]="false" [fixedBottomGap]="true" mode="over">
       <ul>
         <li>
           <a href="sim">Home</a>
@@ -14,8 +32,10 @@
         </li>
       </ul>
     </mat-sidenav>
-    <div class="panel-body">
-      <router-outlet></router-outlet>
-    </div>
+    <mat-sidenav-content >
+      <div class="panel-body">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
   </mat-sidenav-container>
-</div>
+<!-- </div> -->
