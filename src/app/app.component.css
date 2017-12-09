@@ -1,19 +1,18 @@
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hamburger.mat-button {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-.row {
-  width: 100%;
+
+.mat-toolbar {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3)
 }
-.flex-item {
-  padding: 5px;
-  margin: 10px;
-  line-height: 150px;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
+
+.mat-drawer-container {
+  background: none;
+  height:100%
+}
+
+.mat-sidenav {
+  width: 200px;
 }

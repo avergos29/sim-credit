@@ -21,12 +21,13 @@ import {
   MatSortModule,
   MatFormFieldModule,
   MatInputModule,
+  MatToolbarModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatListModule,
 } from '@angular/material';
-import { TableService } from './table.service';
 import { AppService } from './app.service';
-
+import { NavigationComponent } from './navigation/navigation.component';
 const appRoutes: Routes = [
   { path: 'sim', component: CreditFormComponent },
   { path: 'history', component: TableHistoryComponent },
@@ -43,11 +44,12 @@ const appRoutes: Routes = [
     CreditFormComponent,
     TableHistoryComponent,
     ResultDialogComponent,
+    NavigationComponent,
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserModule,
     BrowserAnimationsModule,
@@ -63,9 +65,11 @@ const appRoutes: Routes = [
     MatInputModule,
     MatDialogModule,
     MatSidenavModule,
+    MatToolbarModule,
     MatIconModule,
+    MatListModule,
   ],
-  providers: [TableService, AppService],
+  providers: [AppService],
   bootstrap: [AppComponent],
   entryComponents: [ResultDialogComponent],
 })

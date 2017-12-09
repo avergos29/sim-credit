@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "sim-credit-executor",
+    "name": "sim-credit",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "7bj8wx5c18"
+  }
+}

@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  styleUrls: ['./app.component.css'],
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  displayMenu = false;
+  public displayMenu = true;
 
-  public toggleMenu(): void{
+  public toggleMenu(): void {
     this.displayMenu = !this.displayMenu;
   }
 }
