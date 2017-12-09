@@ -1,34 +1,10 @@
 
-<!-- <div class="panel panel-default"> -->
-  <!-- <div class="panel-heading">
-    <h3>xx</h3>
-  </div> -->
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-    <button class="hamburger mat-button"
-      mat-button=""
-      (click)="toggleMenu()"
-      title="Docs menu">
-      <span class="mat-button-wrapper">
-        <mat-icon class="mat-icon sidenav-open" role="img" svgicon="menu" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24">
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-          </svg>
-        </mat-icon>
-      </span>
-      <div class="mat-button-ripple mat-ripple" matripple=""></div>
-        <div class="mat-button-focus-overlay"></div>
-    </button>
-    Simulation de crédit
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <mat-sidenav-container class="sidenav-container" fixedBottomGap>
-     <mat-sidenav [(opened)]="displayMenu" [fixedInViewport]="false" [fixedBottomGap]="true" mode="push">
+  <mat-sidenav-container fullscreen>
+     <mat-sidenav fixedTopGap="64" [(opened)]="displayMenu" [fixedInViewport]="true" mode="float">
        <app-navigation></app-navigation>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div class="panel-body">
+        <app-nav-bar (toggleMenu)="toggleMenu()"></app-nav-bar>
         <router-outlet></router-outlet>
-      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

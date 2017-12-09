@@ -1,6 +1,6 @@
-form {
-  width: 350px;
-  height: 440px;
+.login {
+  width: 380px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   border-style: solid;
@@ -18,6 +18,8 @@ form {
   height: calc(100% - 64px);
 }
 
-button {
+.button {
+  overflow: hidden;
   float: right;
+  margin-top: 10px;
 }

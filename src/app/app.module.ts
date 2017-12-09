@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,8 +29,11 @@ import {
 } from '@angular/material';
 import { AppService } from './app.service';
 import { NavigationComponent } from './navigation/navigation.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LoginComponent } from './login/login.component';
 const appRoutes: Routes = [
   { path: 'sim', component: CreditFormComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'history', component: TableHistoryComponent },
   {
     path: '',
@@ -45,11 +49,13 @@ const appRoutes: Routes = [
     TableHistoryComponent,
     ResultDialogComponent,
     NavigationComponent,
+    NavBarComponent,
+    LoginComponent,
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      { enableTracing: false, useHash: true } // <-- debugging purposes only
     ),
     BrowserModule,
     BrowserAnimationsModule,
@@ -68,6 +74,7 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    FormsModule,
   ],
   providers: [AppService],
   bootstrap: [AppComponent],

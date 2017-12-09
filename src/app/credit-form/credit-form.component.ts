@@ -11,7 +11,8 @@ import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-result-dialog',
-  template: 'Mensualités : {{data.result}}',
+  template: 'Mensualités : {{ data.result }}',
+  host: { class: 'panel-body' },
 })
 export class ResultDialogComponent {
   constructor(
